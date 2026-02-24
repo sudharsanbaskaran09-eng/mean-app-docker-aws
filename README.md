@@ -113,6 +113,42 @@ http://13.234.114.140/api
 
 ---
 
+## Docker Hub Images
+
+Frontend: sudharsan019/mean-frontend
+
+Backend: sudharsan019/mean-backend
+
+---
+
+## CI/CD Pipeline
+
+Implemented using GitHub Actions.
+
+Triggers on push to main.
+
+Builds Docker images for frontend and backend.
+
+Pushes images to Docker Hub automatically.
+
+(If you enabled it) Auto-deploys to EC2 using SSH and restarts containers.
+
+---
+
+
+## Nginx Reverse Proxy
+
+Nginx configured on EC2 as a reverse proxy.
+
+Application accessible via port 80.
+
+/ routes to Angular frontend.
+
+/api routes to Node.js backend.
+
+
+---
+
 ## Key Learnings
 
 Docker container networking using service names
