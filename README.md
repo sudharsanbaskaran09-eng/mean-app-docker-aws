@@ -1,55 +1,55 @@
-MEAN Stack Application Deployment on AWS using Docker & Nginx
-Project Overview
+# MEAN Stack Application Deployment on AWS using Docker & Nginx
 
-This project demonstrates the deployment of a MEAN Stack (MongoDB, Express, Angular, Node.js) application on AWS EC2.
-The application is fully containerized using Docker and orchestrated with Docker Compose.
-Nginx is configured as a reverse proxy to expose the entire application through port 80.
+## Project Overview
 
-The application provides a CRUD interface for managing tutorials.
+This project demonstrates the deployment of a **MEAN Stack** application (**MongoDB, Express, Angular, Node.js**) on **AWS EC2**.
 
-Architecture
+The application is fully containerized using **Docker** and orchestrated with **Docker Compose**.  
+**Nginx** is configured as a reverse proxy to expose the entire application through **port 80**.
 
+The application provides a **CRUD interface** for managing tutorials.
+
+---
+
+## Architecture
 Browser
-│
-│ HTTP (Port 80)
-▼
+|
+| HTTP (Port 80)
+v
 Nginx (Reverse Proxy)
 ├── / → Angular Frontend (4200)
 └── /api → Node.js Backend (8080)
-                │
-                ▼
-            MongoDB (27017)
+|
+v
+MongoDB (27017)
 
-Technology Stack
+---
 
-Frontend: Angular
+## Technology Stack
 
-Backend: Node.js, Express
+- **Frontend:** Angular  
+- **Backend:** Node.js, Express  
+- **Database:** MongoDB  
+- **Containerization:** Docker, Docker Compose  
+- **Reverse Proxy:** Nginx  
+- **Cloud Platform:** AWS EC2 (Ubuntu 22.04)
 
-Database: MongoDB
+---
 
-Containerization: Docker, Docker Compose
+## AWS EC2 Configuration
 
-Reverse Proxy: Nginx
+- **Operating System:** Ubuntu 22.04
 
-Cloud Platform: AWS EC2 (Ubuntu 22.04)
+### Inbound Security Group Rules
 
-AWS EC2 Configuration
+- SSH (22)
+- HTTP (80)
+- Frontend (4200) – optional for testing
+- Backend (8080) – optional for testing
 
-Operating System: Ubuntu 22.04
+---
 
-Inbound Security Group Rules:
-
-SSH (22)
-
-HTTP (80)
-
-Frontend (4200) – optional for testing
-
-Backend (8080) – optional for testing
-
-Project Structure
-
+## Project Structure
 crud-dd-task-mean-app/
 ├── backend/
 │ ├── Dockerfile
@@ -60,66 +60,48 @@ crud-dd-task-mean-app/
 ├── docker-compose.yml
 └── README.md
 
-Docker Configuration
-Backend Service
+---
 
-Runs on port 8080
+## Docker Configuration
 
-Connects to MongoDB using Docker service name mongo
+### Backend Service
+- Runs on port **8080**
+- Connects to MongoDB using Docker service name **mongo**
 
-Frontend Service
+### Frontend Service
+- Runs using Angular development server
+- Bound to **0.0.0.0** for external access
 
-Runs using Angular development server
+### Docker Compose
+- Services: **frontend**, **backend**, **mongo**
+- Uses a shared Docker network
 
-Bound to 0.0.0.0 for external access
+---
 
-Docker Compose
+## Running the Application
 
-Services: frontend, backend, mongo
+Stop existing containers (if any):
 
-Uses a shared Docker network
-
-Running the Application
-
+```bash
 docker-compose down
 docker-compose up -d --build
-
-Verify running containers:
-
-docker ps
-
 Nginx Reverse Proxy Configuration
 
-Nginx exposes the application through port 80.
+Nginx exposes the application through port 80
 
 / routes to Angular frontend (4200)
 
 /api routes to Node.js backend (8080)
 
-After configuration:
-
+After configuration, validate and restart Nginx:
 sudo nginx -t
 sudo systemctl restart nginx
-
 Application Access
-
 Frontend UI
 http://13.234.114.140
 
 Backend API
 http://13.234.114.140/api
-
-Screenshots
-
-frontend_ui_port_80.png
-
-frontend_tutorials_list_port_80.png
-
-frontend_add_tutorial_page.png
-
-backend_api_via_nginx.png
-
-containers_running.png
 
 Key Learnings
 
@@ -134,6 +116,7 @@ End-to-end cloud deployment on AWS
 Conclusion
 
 This project demonstrates a production-style deployment of a MEAN stack application using Docker, Docker Compose, and Nginx on AWS EC2.
+
 The application is accessible through a single HTTP endpoint and follows modern DevOps best practices.
 
 Author
