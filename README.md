@@ -89,7 +89,7 @@ docker ps
 
 ---
 
-##Nginx Reverse Proxy Configuration
+###Nginx Reverse Proxy Configuration
 
 Nginx exposes the application through port 80
 
