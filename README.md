@@ -113,7 +113,7 @@ http://13.234.114.140/api
 
 ---
 
-3#Key Learnings
+##Key Learnings
 
 Docker container networking using service names
 
@@ -125,7 +125,7 @@ End-to-end cloud deployment on AWS
 
 ---
 
-3#Conclusion
+##Conclusion
 
 This project demonstrates a production-style deployment of a MEAN stack application using Docker, Docker Compose, and Nginx on AWS EC2.
 
@@ -133,6 +133,6 @@ The application is accessible through a single HTTP endpoint and follows modern 
 
 ---
 
-#3Author
+##Author
 
 Sudharsan B
