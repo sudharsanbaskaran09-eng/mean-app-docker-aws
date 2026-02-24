@@ -89,7 +89,7 @@ docker ps
 
 ---
 
-###Nginx Reverse Proxy Configuration
+## Nginx Reverse Proxy Configuration
 
 Nginx exposes the application through port 80
 
@@ -103,17 +103,17 @@ sudo systemctl restart nginx
 
 ---
 
-##Application Access
-Frontend UI
+## Application Access
+## Frontend UI
 http://13.234.114.140
 
 
-##Backend API
+## Backend API
 http://13.234.114.140/api
 
 ---
 
-##Key Learnings
+## Key Learnings
 
 Docker container networking using service names
 
@@ -125,7 +125,7 @@ End-to-end cloud deployment on AWS
 
 ---
 
-##Conclusion
+## Conclusion
 
 This project demonstrates a production-style deployment of a MEAN stack application using Docker, Docker Compose, and Nginx on AWS EC2.
 
@@ -133,6 +133,6 @@ The application is accessible through a single HTTP endpoint and follows modern 
 
 ---
 
-##Author
+## Author
 
 Sudharsan B
